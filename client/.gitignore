@@ -1,5 +1,5 @@
 # dependencies
-/node_modules
+node_modules/
 /.pnp
 .pnp.js
 .env.local
@@ -7,7 +7,7 @@
 # testing
 /coverage
 # Configuration
-/config
+config/
 # production
 /build
 
@@ -19,5 +19,3 @@
 .env.production.local
 
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
