@@ -1,0 +1,118 @@
+body{
+  margin: 0px;
+  padding: 0px;
+  color: #444;
+}
+
+.container {
+  min-height: 70vh;
+}
+.owner-span{
+  font-size: 1.5em;
+  font-weight: bold; 
+   
+}
+span.owner-span{
+  color: white;
+}
+
+#top-carousel{        
+  margin: 2% auto 3%;
+  width: 100%;
+  height: auto;   
+  border-radius: 4px;
+}
+
+.image-slide{ 
+  margin: 0px auto;  
+  transition: all 0.4s ease-out 0s; 
+  border: 1px solid #dedede;
+  padding: 0.4em;
+  border-radius: 4px;  
+  width: auto;
+  height: 22rem;
+}
+
+#top-carousel .slide-arrow { 
+  position: relative; 
+  cursor: pointer;
+  font-size: 2.4rem;
+  padding: 0.5em;
+  top: 100px;    
+  z-index: 100;
+}
+
+#top-carousel .slide-arrow.right {  
+  float: right;
+  margin-top: -300px; 
+  color: rgb(14, 159, 231);
+}
+
+#top-carousel .slide-arrow.left {
+ float: left;
+ color: rgb(14, 159, 231);
+ margin-top: 50px;
+}
+
+#top-carousel .slide-arrow.right:hover, #top-carousel .slide-arrow.left:hover{
+  color: rgb(10, 10, 10);   
+}
+
+h3.slider-text{  
+  text-align: center;
+  font-weight: bold;
+}
+
+.card{
+  height: 100%;
+}
+
+h5.card-title{
+  text-align: center;
+  color: rgb(14, 159, 231);
+  font-size: 3em;
+  border-bottom: 1px solid rgb(14, 159, 231);
+  margin-bottom: 12px;
+}
+
+img.our-vision{  
+  padding: 0.6em;
+  border-radius: 6px;
+  border: 1px solid #dedede;
+  margin-bottom: 30px;
+}
+
+img.who{ 
+  width: 80%;
+  margin: 0px 9% 9% 0px; 
+  padding: 0.6em;
+  border-radius: 6px;
+  border: 1px solid #dedede;
+  
+}
+
+.map {
+  margin: 0px 0px 40px 0px;
+  padding: 0px;
+  width: auto;
+  height: 350px;
+}
+.leaflet-popup-content p {
+  line-height: 2px;
+}
+
+.navbar-brand i{
+  color: black;
+}
+
+.navbar-brand i:hover{
+  color: rgb(245, 238, 238);
+}
+
+
+nav, footer{
+  color: black;  
+  background: rgb(14, 159, 231);
+  width: 100%;
+}
+
