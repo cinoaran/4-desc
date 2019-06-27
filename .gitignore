@@ -1,6 +1,7 @@
 # dependencies
 
 node_modules/
+client/node_modules/
 /.pnp
 .pnp.js
 .env.local
@@ -9,6 +10,7 @@ node_modules/
 /coverage
 # Configuration
 config/
+
 # production
 /build
 
