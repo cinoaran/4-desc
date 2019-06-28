@@ -17,7 +17,8 @@ export class CreateOwner extends Component {
         facility: {},
         credentials: {},
         address: {},
-        file: null,
+        files: [], 
+        filesPreviewUrls: [],       
         fileError: null
     }
 
@@ -66,22 +67,22 @@ export class CreateOwner extends Component {
         
     }
 
-    handleChangeUpload = (e) => {
-        console.log(e.target.files[0].type)
-        
-        if(e.target.files[0].type !== 'image/png' || e.target.files[0].type !== 'image/gif' || e.target.files[0].type !== 'image/jpeg'){
-            this.setState({
-                fileError: 'Please select only gif, png, jpeg filetypes',
-                
-            }) 
 
-        } else {
-            this.setState({
-                file: URL.createObjectURL(e.target.files[0]),
-                fileName: e.target.files[0].name
-            }) 
-        }
-                
+    handleChangeUpload = (e) => {
+
+        let files = Array.from(e.target.files);
+
+        files.forEach((file) => {
+            let reader = new FileReader();
+            reader.onloadend = () => {
+                this.setState({    
+                    files: [...this.state.files, file],
+                    filesPreviewUrls: [...this.state.filesPreviewUrls, reader.result]
+                });
+            }
+            reader.readAsDataURL(file);
+        });
+            
         
     } 
 
@@ -91,8 +92,9 @@ export class CreateOwner extends Component {
         this.props.addOwnerData(this.state);
     }
 
+ 
     render() {
-       
+        console.log(this.state.filesPreviewUrls)
         return (
             <div className="container"> 
                <div className="card p-4">
@@ -102,16 +104,15 @@ export class CreateOwner extends Component {
                 <div className="form-row">
                 <h5 className="col-md-12 text-center m-3">Upload owner images</h5>  
                     <div className="col-md-12 custom-control custom-checkbox">
-                        <input type="file" className="custom-file-input" id="customFile" onChange= {this.handleChangeUpload } name="file" accept="image/x-png,image/gif,image/jpeg" required/>
-                        <label className="custom-file-label" htmlFor="customFile">Choose file</label>                    
-                    {   
-                            (this.state.file) ? 
-                                <img src={this.state.file} alt="preview owner img"/> 
-                            : 
-                                <i className="fas fa-camera-retro"></i> 
-                    } 
-                    </div>
-                    <h5 className="col-md-12 text-center m-3">Contact and location details</h5>  
+                        <input type="file" className="custom-file-input" id="customFile" onChange= {this.handleChangeUpload } name="files" accept="image/x-png,image/gif,image/jpeg" multiple required/>
+                        <label className="custom-file-label" htmlFor="customFile">Browse image ( only gif, png, jpeg )</label>                    
+                    </div>  
+
+                        {this.state.filesPreviewUrls.map((filesPreviewUrl) => {
+                            return <div className="col-md-4 m-auto text-center"><img key={filesPreviewUrl} className="img-fluid mt-3" alt='previewImg' src={filesPreviewUrl} /></div>
+                        })}        
+        
+                        <h5 className="col-md-12 text-center m-3">Contact and location details</h5>  
                         <div className="form-group col-md-6"> 
                             <input onChange={this.onChange} type="text" name="companyName" className="form-control" id="companyName" aria-describedby="companyNameHelp" placeholder="Company name" required />
                             <small id="companyName" className="form-text text-muted">Company name must contain at least 3 chars</small>

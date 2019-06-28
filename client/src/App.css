@@ -109,6 +109,15 @@ img.who{
   color: rgb(245, 238, 238);
 }
 
+.fa-file-image, .fa-camera-retro{
+  margin-top: 12px;
+  display: block;
+  font-size: 8em;
+  color: rgb(14, 159, 231);
+} 
+form span{
+  font-size: 12px;
+}
 
 nav, footer{
   color: black;  
