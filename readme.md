@@ -1,6 +1,6 @@
 # Mern stack service application for business clients
 
-> Create full stack apps with React/Redux and Express. Run your client and server with a single command
+> Working on dashboard for a initial setup
 
 
 ## Quick Start
