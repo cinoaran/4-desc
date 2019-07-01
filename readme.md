@@ -1,4 +1,4 @@
-# Mern stack service application for business clients
+# Service to provide Hotel clients with web presentation and dashboard management.
 
 > Working on dashboard for a initial setup
 
